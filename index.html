@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<head>
+ <meta charset='UTF-8'>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <style>
+   @font-face {
+  font-family: nunito;
+  src: url(font/Nunito.ttf);
+}
+
+  h1,h2,h3,h4,h5,h6,body,div,p,a,li,ul,img{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   user-select: none;
+   font-family: nunito, Sans-Serif;
+  }
+
+  :root{
+   --c1 : #141c26;
+   --c2 : #314259;
+   --c3 : #7394bf;
+   --c4 : #223240;
+   --c4 : #bacbd9;
+   --c5 : #35485e;
+  }
+  
+  body{
+   width: 100vw;
+   height: auto;
+  }
+  
+  header h1{
+   background: var(--c1);
+   color: #fff;
+   padding: 5px;
+   font-size: 25px;
+   font-weight: 400;
+  }
+
+ /*main-intro*/
+ 
+ .intro{
+  background: url(img/bg.png) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 280px;
+  margin: 3px 0;
+  padding: 10px;
+  position: relative;
+ }
+ .intro .bg{
+   position: absolute;
+   left: 0;
+   top: 0;
+   background: var(--c5);
+   opacity: .75;
+   width: 100%;
+   height: 280px;
+ }
+ .intro h3{
+  font-weight: 400;
+  color: #fff;
+  z-index: 5;
+  position: absolute;
+  opacity: 1;
+  animation: ani 1.5s ease-out .5s;
+ }
+ @keyframes ani{
+     0%{opacity: 0;}
+     10%{opacity: .8;}
+     20%{opacity: .3;color: red;text-shadow:-2px 3px 0px cyan;}
+     30%{opacity: .7;color: green;text-shadow:4px 1px 0px red;}
+     50%{opacity: .2;color: cyan;}
+     100%{opacity: 1;color: #fff}
+ }
+ .intro h3 span{
+  font-weight: 700;
+  font-size: 28px;
+  padding-left: 100px;
+  color: #fff;
+  z-index: 5;
+  animation: ani 1s ease-in .5s;
+ }
+ .intro ul{
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  color: #fff;
+  animation: ani .5s ease 2s;
+ }
+ .intro ul p{
+  font-size: 22px;
+  padding-bottom: 5px;
+ }
+ .intro ul span{
+  font-size: 10px;
+ }
+ .intro ul li{
+  line-height: 25px;
+ }
+ 
+ /* My works */
+ .works{
+  width: 100%;
+  background:  var(--c2);
+ }
+ .works h2{
+  width: 140px;
+  padding-top: 5px;
+  color: #fff;
+  font-size: 22px;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: solid 2px #aaa;
+ }
+ .works .wrap{
+  overflow: auto;
+  margin-top: 5px;
+  position: relative;
+ }
+ .works .imgs{
+  width: 1180px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+ }
+ .works .wrap .imgs div{
+  width: 140px;
+  height: 120px;
+  margin: 3px;
+  background: #555;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: background .2s ease;
+  overflow: hidden;
+  border: solid .5px rgba(0,0,0,0);
+ }
+ .works .wrap .imgs div img{
+  width: 140px;
+  height: 120px;
+ }
+ .works .wrap .imgs div:hover{
+  background: #777;
+  border: solid .5px var(--c4);
+ }
+ .works .wrap .imgs div p{
+  color: #fff;
+  position: absolute;
+  bottom: -20px;
+  left: 7px;
+  font-size: 12px;
+  transition:bottom .3s 
+  	cubic-bezier(.11,-0.32,0.15,2.2);
+  z-index: 2;
+ }
+ .works .wrap .imgs div:hover p{
+  bottom: 5px;
+ }
+ 
+ .social ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px 10px 10px ;
+  list-style: none;
+  width: 150px;
+  margin: 0 auto;
+ }
+ .social ul li div{
+  width: 30px;
+  height: 30px;
+  background: rgba(222,222,222,0);
+  overflow: hidden;
+  border-radius: 5px;
+ }
+ .social img{
+     width: 30px;
+     font-size: 10px;
+  cursor: pointer;
+ }
+ .social p{
+     text-align: center;
+     color: #fff;
+ }
+ 
+ /*last*/
+ 
+ .last .softwares{
+  background:  var(--c3);
+  padding: 10px 20px;
+  margin: 3px 0;
+ }
+ .last .softwares ul p{
+  font-weight: 500;
+ }
+ .last .softwares ul li div{
+  width: 35px;
+  height: 35px;
+  background: rgba(222,222,222,0);
+  margin-right: 10px;
+ }
+ .last .softwares ul li div img{
+     width: 35px;
+     font-size: 10px;
+     filter: drop-shadow(2px 2px .3px rgba(0,0,0,.5));
+     transition: filter .2s ease-out;
+ }
+ .last .softwares ul li:hover div img{
+     filter: drop-shadow(0 0 1px rgba(0,0,0,.5));
+ }
+ .last .softwares ul li{
+  height: 35px;
+  margin: 5px;
+  padding-left: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  font-weight: 400;
+  font-size: 18px;
+  transition: margin .15s ease-out;
+ }
+ .last .softwares ul li:hover span{
+     margin-left: 8px;
+ }
+ .last .softwares h5{
+  font-weight: 500;
+  padding-left: 15px;
+ }
+ .last .softwares .other{
+  display: flex;
+  padding-left: 60px;
+  position: relative;
+ }
+ .last .softwares .other .names{
+  position: absolute;
+  width: 200px;
+  top: -25px;
+  left: 70px;
+  background: rgba(90,100,190,.25);
+  height: 20px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 20px;
+ }
+ .last .softwares .other .names:hover{
+     transform: scale(1);
+     filter: none;
+ }
+ .last .softwares .other div{
+  width: 30px;
+  height: 30px;
+  background: rgba(222,222,222,0);
+  margin-left: 15px;
+  margin-top: 5px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 0 rgba(0,0,0,.5));
+  transition: filter .1s ease-out;
+ }
+ .last .other img{
+     width: 30px;
+     font-size: 10px;
+ }
+ .last .other div:hover{
+     filter: drop-shadow(2px 2px .3px rgba(0,0,0,.5));
+     transition: filter .1s ease-out;
+ 
+ }
+ .last .contact{
+  background:  var(--c4);
+  padding:0 10px;
+ }
+ .last .contact p{
+  text-align: center;
+  font-weight: 600;
+  padding: 5px 0;
+  color: var(--c5);
+ }
+ .last .g div{
+  display: flex;
+ }
+ .last .g img{
+     width: 25px;
+     height: 25px;
+     font-size: 10px;
+     margin-right: 10px;
+ }
+ .last .g span a{
+     line-height: 33px;
+     font-size: 18px;
+     text-decoration: none;
+     color: var(--c5);
+ }
+ 
+ /*footer*/
+ 
+ footer{
+  text-align: center;
+  background:  var(--c5);
+  color: #ddd;
+  margin-top: 3px;
+  padding: 5px;
+  font-size: 12px;
+  font-family: Sans-Serif;
+ }
+ 
+ </style>
+</head>
+<body>
+ 
+ <header>
+   <h1>Portfolio</h1>
+ </header>
+ 
+ 
+ <main>
+   
+   <div class="intro">
+       <div class="bg"></div>
+     <h3>Hi, My name is <br/>
+      <span>Soe Thiha Lwin</span></h3>
+     
+     <ul>
+      <p>I am a</p>
+      <li>Graphic designer</li>
+      <li>3D Artist</li>
+      <li>Video Creator</li>
+      <li>Web developer <span>(front end)</span></li>
+     </ul>
+   </div><!--intro-->
+   
+   <div class="works">
+   
+    <h2>MY WORKS</h2>
+    
+     <div class="wrap"> 
+       <div class="imgs">
+       
+        <div> 
+         <img src="img/1.png">
+         <p>Zlatan</p> 
+        </div>
+        
+        <div> 
+         <img src="img/2.png">
+         <p>Abstract</p> 
+        </div>
+        
+        <div> 
+         <img src="img/3.png">
+         <p>Abstract</p> 
+        </div>
+        
+        <div> 
+         <img src="img/4.png">
+         <p>Interior</p> 
+        </div>
+        
+        <div> 
+         <img src="img/5.png">
+         <p>Interior</p> 
+        </div>
+        
+        <div> 
+         <img src="img/6.png">
+         <p>Interior</p> 
+        </div>
+        
+        <div> 
+         <img src="img/7.png">
+         <p>Ukulele</p> 
+        </div>
+        
+        <div> 
+         <img src="img/8.png">
+         <p>Interior</p> 
+        </div>
+        
+        <div> 
+         <img src="img/9.png">
+         <p>Character</p> 
+        </div>
+        
+        <div> 
+         <img src="img/10.png">
+         <p>Character</p> 
+        </div>
+        
+        <div> 
+         <img src="img/11.png">
+         <p>Muscle</p> 
+        </div>
+        
+        <div> 
+         <img src="img/12.png">
+         <p>Muscle</p> 
+        </div>
+        
+        <div> 
+         <img src="img/13.png">
+         <p>Vector</p> 
+        </div>
+        
+        <div> 
+         <img src="img/14.png">
+         <p>Among us</p> 
+        </div>
+        
+        <div> 
+         <img src="img/15.png">
+         <p>Sculpture</p> 
+        </div>
+        
+        <div> 
+         <img src="img/16.png">
+         <p>Forky</p> 
+        </div>
+        
+       </div><!--imgs-->
+       
+     </div><!--wrap-->
+     
+       <div class="social">
+           <p>Watch more at:</p>
+         <ul>
+          <li> <a href="https://www.instagram.com/z_sphinx.9/">
+            <div>
+              <img src="img/in.png" alt="instagram">
+            </div>
+          </a> </li>
+          
+          <li> <a href="https://z_thiha.artstation.com/">
+              <div>
+                 <img src="img/art.png" alt="artstation">
+              </div>
+          </a></li>
+         </ul>
+          
+       </div><!--social-->
+       
+   </div><!--works-->
+   
+        <!------------Contact------------->
+   
+   <div class="last">
+   
+     <div class="softwares">
+       <ul>
+        <p>Skills</p>
+        <li> 
+          <div>
+          <img src="img/bd.png" alt="blender"/>
+          </div> <span>Blender</span>
+        </li>
+        <li> 
+          <div>
+           <img src='img/ps.png' alt="photoshop"/>
+          </div><span>Adobe Photoshop</span>
+        </li>
+        <li>
+          <div>
+          <img src="img/ai.png" alt="Illustrator"/>
+          </div><span> Adobe Illustrator</span>
+         </li>
+        <li> 
+          <div>
+          <img src="img/ae.png" alt="Aftereffects"/>
+          </div><span> Adobe AfterEffects</span>
+        </li>
+        <li> 
+          <div>
+              <img src="img/pr.png" alt="Preimere"/>
+          </div> <span>Adobe PremierePro</span>
+          </li>
+       </ul>
+        
+         <h5>and more:</h5>
+        <div class="other">
+        
+         <div>
+          <img src="img/en.png" alt="media encoder" id="en"/>
+        </div>
+         <div> 
+            <img src="img/lr.png" alt="lightroom" id="lr">
+         </div>
+         <div> 
+             <img src="img/py.png" alt="python" id="py">
+         </div>
+         <div> 
+              <img src="img/ink.png" alt="inkscape" id="ink">
+         </div>
+         <div> 
+              <img src="img/gp.png" alt="GIMP" id="gp">
+         </div>
+         
+         
+        <div class="names">Adobe Media Encoder</div>
+        
+        </div><!--other-->
+       
+     </div><!--softwares-->
+     
+     <div class="contact">
+     
+       <p>Get in touch</p>
+          <div class="g">
+           <div>
+              <img src="img/gm.png" alt="gmail">
+              <span>
+              <a href="">soethihalwin.2001@gmail.com</a>
+              </span>
+           </div>
+           
+           <div>
+            <img src="img/ph.png" alt="phone">
+             <span>
+                 <a href="">09955155356</a> ,
+                 <a href="">09784917758</a>
+             </span>
+           </div>
+           
+          </div><!--g-->
+          
+       
+     </div><!--contact-->
+   
+   </div><!--last-->
+   
+ </main>
+  
+  <footer>
+   <div class="icons">
+   
+   </div>
+   <p>&copy; copyright 2021. All rights reserved.<br/>zsphinx</p>
+  </footer>
+ 
+ 
+ <script>
+  
+  var en = document.getElementById("en");
+  var lr = document.getElementById("lr");
+  var py = document.getElementById("py");
+  var ink = document.getElementById("ink");
+  var gp = document.getElementById("gp");
+  
+  let name = document.querySelector(".names");
+  
+  en.addEventListener("mouseover",()=>{
+      name.innerText = "Adobe Media Encoder";
+  })
+  
+  lr.addEventListener("mouseover",()=>{
+      name.innerText = "Adobe Lightroom";
+  })
+  
+  py.addEventListener("mouseover",()=>{
+      name.innerText = "Python";
+  })
+  
+  ink.addEventListener("mouseover",()=>{
+      name.innerText = "Inkscape";
+  })
+  
+  gp.addEventListener("mouseover",()=>{
+      name.innerText = "GIMP";
+  })
+
+  
+  
+ </script>
+</body>
+</html>
